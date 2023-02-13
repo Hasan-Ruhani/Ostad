@@ -7,7 +7,7 @@
             return "odd";
         }
     }
-    $number = 2;
+    $number = 12;
     $result = isEven_or_Odd($number);
     echo "$number is $result number.";
 
@@ -19,9 +19,3 @@
         $sum += $i;
     }
     echo "1+2+3.......$value The sum of the series will be = $sum.";
-
-
-
-
-?>
-
