@@ -17,15 +17,3 @@ if ($val1 == 0 || $val2 == 0) {
 
 echo $output;
 
-//You can also check this.
-
-// $students = [
-//     "Rahim",
-//     "Karim",
-//     "Shafik",
-//     "Salam",
-// ];
-// echo $students[1].$students[3];
-
-
-
