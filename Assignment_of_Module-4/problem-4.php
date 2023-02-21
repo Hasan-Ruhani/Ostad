@@ -1,6 +1,6 @@
 <?php
    function say($string){
-      $needle = 'H';
+      $needle = ' ';
       $isWPresent = strpos($string, $needle);
 
       if($needle == ' '){     //check whitespace
