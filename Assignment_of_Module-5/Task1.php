@@ -1,6 +1,6 @@
 <?php
-	include_once("Task3.php");
 	include_once("Task2.php");
+	include_once("Task3.php");
 
 	if (isset($_SERVER["REQUEST_METHOD"]) && $_SERVER["REQUEST_METHOD"] == "POST") {
 		$abc = new MyPerson();
