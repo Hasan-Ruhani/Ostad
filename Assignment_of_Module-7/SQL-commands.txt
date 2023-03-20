@@ -1,0 +1,39 @@
+    Assignment Name: SQL Commands Assignment
+...............................................
+    A. SELECT * FROM employees;
+    Note: This command selects all columns and rows from the employees table.
+...............................................
+    B. SELECT name, salary FROM employees WHERE salary > 50000;
+    Note: This command selects only the name and salary columns of all employees with a salary greater than 50000.
+
+...............................................
+    C. SELECT AVG(salary) FROM employees;
+    Note: This command calculates the average salary of all employees.
+
+...............................................
+    D. SELECT COUNT(*) FROM employees WHERE department_id = (SELECT id FROM departments WHERE name = 'Marketing');
+    Note: This command counts the number of employees who work in the "Marketing" department. It first selects the id of the Marketing department from the departments table and then uses it to count the number of employees in the employees table.
+
+...............................................
+    E. UPDATE employees SET salary = 60000 WHERE id = 1001;
+    Note: This command updates the salary column of the employee with an id of 1001 to 60000.
+
+...............................................
+    F. DELETE FROM employees WHERE salary < 30000;
+    Note: This command deletes all employees whose salary is less than 30000.
+
+...............................................
+    A. SELECT * FROM departments;
+    Note: This command selects all columns and rows from the departments table.
+
+...............................................
+    B. SELECT name, manager FROM departments WHERE name = 'Finance';
+    Note: This command selects only the name and manager columns of the "Finance" department.
+
+...............................................
+    C. SELECT departments.name, COUNT(*) FROM employees JOIN departments ON employees.department_id = departments.id GROUP BY departments.name;
+    Note: This command calculates the total number of employees in each department. It uses the JOIN clause to combine the employees and departments tables on the department_id and id columns, respectively. The GROUP BY clause groups the result by the department name.
+
+...............................................
+    D. INSERT INTO departments (name, manager) VALUES ('Research', 'John Doe');
+    Note: This command inserts a new department called "Research" with a manager named "John Doe" into the departments table.
