@@ -1,8 +1,10 @@
 <?php
-    $suc_msg = "";
+    $inv_msg = "";
     $inv_email = "";
     $inv_pass = "";
     $inv_email_blank = "";
+
+    $first_name = "H A S A N";
 
     if($_SERVER["REQUEST_METHOD"] == "POST"){
         $email = $_POST["email"];
@@ -25,7 +27,11 @@
         }
 
         if(count($invalids) == 0){
-            $suc_msg = "Hey $first_name, You are welcome";
-            header("Location: login.php?");
+            if(($email == "kk.hasan@gmail.com") && ($password == 123)){
+                header("Location: users.php?");
+            }
+            else{
+                $inv_msg = "Invalid email or password";
+            }
         }
     }
