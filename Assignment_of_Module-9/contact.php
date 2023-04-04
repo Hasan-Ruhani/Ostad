@@ -13,97 +13,144 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     ?>
 
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>My Blog - Contact Us</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="styles.css">
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">    
-  </head>
-  <body>
-    <?php include_once("header.php"); ?>
-    <style>
-		body{
-			background-color: #615d8329;
-		}
-		.col {
-            -ms-flex-preferred-size: 0;
-            flex-basis: 0;
-            -ms-flex-positive: 1;
-            flex-grow: 1;
-            max-width: 100%;
-            border: rgb(67 137 50 / 11%);
-            padding-bottom: 100px;
-            margin: 62px 197px;
-            padding-top: 18px;
-            background: rgb(67 137 50 / 11%);
-            border-radius: 10px;
-        }
-		h1 {
-			font-size: 2rem;
-			font-family: roboto;
-			font-weight: 600;
-			color: lightslategrey;
-		}
+<html lang="en">
+<head>
+  <!-- Theme Made By www.w3schools.com -->
+  <title>Contact</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  <style>
 
-        h3 {
-			font-size: 2rem;
-			font-family: roboto;
-			font-weight: 600;
-			color: #3e1f2ac9;
-		}
+  h2 {
+    font-size: 24px;
+    text-transform: uppercase;
+    color: #f4511e;
+    font-weight: 600;
+    margin-bottom: 30px;
+  }
 
-        h12 {
-			font-size: 1rem;
-			color: red;
-		}
+  .jumbotron {
+    background-color: #f4511e;
+    color: #fff;
+    padding: 100px 25px;
+    font-family: Montserrat, sans-serif;
+  }
+  .container-fluid {
+    padding: 60px 50px;
+  }
+  .bg-grey {
+    background-color: #f6f6f6;
+  }
+  .logo-small {
+    color: #f4511e;
+    font-size: 50px;
+  }
+  .logo {
+    color: #f4511e;
+    font-size: 200px;
+  }
 
-	</style>
-    <main>
-      <div class="container text-center">
-			  <div class="row">
-				  <div class="col">
-              <form method="POST" action="contact.php">
-                <h1>Register Now</h1>
-                <div class="input-group form-group">
-                  <div class="input-group-prepend">
-                      <label for="name" class="input-group-text">Name:</label><br>
-                    </div>
-                    <input class="form-control" type="text" id="name" name="name" placeholder="Name"><br>
-                  </div>
 
-						      <div class="input-group form-group">
-							      <div class="input-group-prepend">
-								      <label for="email" class="input-group-text">Email:</label><br>
-							      </div>
-							      <input class="form-control" type="email" id="email" name="email" placeholder="E-mail">
-						      </div>
+  .panel-heading {
+    color: #fff !important;
+    background-color: #f4511e !important;
+    padding: 25px;
+    border-bottom: 1px solid transparent;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+  }
 
-                  <div class="input-group form-group">
-							      <div class="input-group-prepend">
-								      <label for="subject" class="input-group-text">Subject:</label><br>
-							      </div>
-							      <input class="form-control" type="text" id="subject" name="subject" placeholder="subject">
-						      </div>
 
-                  <div class="input-group form-group">
-							      <div class="input-group-prepend">
-								      <label for="message" class="input-group-text">Message:</label><br>
-							      </div>
-							      <textarea class="form-control" type="text" id="message" name="message"></textarea>
-						      </div>
 
-						      <div class="btn float-right login_btn">
-							      <input type="submit" value="Register" class="btn btn-outline-primary">
-						      </div>
-                  <div class="input-group"> 
-                    <h3> <?php echo $msg; ?> </h3>
-                </div>
-					    </form>
-				    </div>
-			    </div>
-		    </div>
-    </main>
-  </body>
+  .navbar {
+    margin-bottom: 0;
+    background-color: #f4511e;
+    z-index: 9999;
+    border: 0;
+    font-size: 12px !important;
+    line-height: 1.42857143 !important;
+    letter-spacing: 4px;
+    border-radius: 0;
+    font-family: Montserrat, sans-serif;
+  }
+  .navbar li a, .navbar .navbar-brand {
+    color: #fff !important;
+  }
+  .navbar-nav li a:hover, .navbar-nav li.active a {
+    color: #f4511e !important;
+    background-color: #fff !important;
+  }
+  .navbar-default .navbar-toggle {
+    border-color: transparent;
+    color: #fff !important;
+  }
+
+  
+  </style>
+</head>
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="index.php">BLOG</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="index.php">HOME</a></li>
+        <li><a href="blog.php">BLOG</a></li>
+        <li><a href="contact.php">CONTACT</a></li>
+        <li><a href="#">SERVICES</a></li>
+        <li><a href="#">PORTFOLIO</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+  
+<div id="contact" class="container-fluid bg-grey">
+  <h2 class="text-center">CONTACT</h2>
+  <div class="row">
+    <div class="col-sm-5">
+      <p>Contact us and we'll get back to you within 24 hours.</p>
+      <p><span class="glyphicon glyphicon-map-marker"></span> Khulna, BD</p>
+      <p><span class="glyphicon glyphicon-phone"></span> +00 1515151515</p>
+      <p><span class="glyphicon glyphicon-envelope"></span> kk.hasan420@gmail.com</p>
+    </div>
+    <form method="POST">
+    <div class="col-sm-7 slideanim">
+      <div class="row">
+        <div class="col-sm-6 form-group">
+          <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
+        </div>
+        <div class="col-sm-6 form-group">
+          <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
+        </div>
+        <div class="col-sm-12 form-group">
+          <input class="form-control" id="subject" name="subject" placeholder="Type About Yourself" type="text" required>
+        </div>
+      </div>
+      <textarea class="form-control" id="message" name="message" placeholder="Comment" rows="5"></textarea><br>
+      <div class="row">
+        <div class="col-sm-12 form-group">
+          <input class="btn btn-default pull-right" type="submit" value="Send">
+        </div>
+      </div>
+    </div>
+    <h2><?php echo $msg; ?></h2>
+    </form>
+  </div>
+</div>
+</body>
   <?php include_once("footer.php"); ?>
 </html>
+
