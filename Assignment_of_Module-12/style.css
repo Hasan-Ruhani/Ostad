@@ -1,0 +1,63 @@
+    body {
+        background-image: url('http://getwallpapers.com/wallpaper/full/a/5/d/544750.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 100%;
+        font-family: 'Numans', sans-serif;
+    }
+
+    .from_Container {
+        text-align: center;
+        height: 320px;
+        margin-top: 90px;
+        margin-bottom: auto;
+        margin-left: 32%;
+        padding-top: 20px;
+        width: 480px;
+        border-radius: 20px;
+        background-color: rgba(0,0,0,0.5) !important;
+    }
+
+    input {
+        width: 90%;
+        padding: 8px;
+        border: none;
+        border-radius: 8px;
+        margin-bottom: 10px;
+        background: #ffffff1f;
+        color: #edd10d;
+        font-family: math;
+        font-weight: bold;
+    }
+
+    input::placeholder{
+        font-family: monospace;
+        color: rgb(243, 149, 149);
+    }
+
+    h1, label {
+        margin-top: 10px;
+        font-family: cursive;
+        color: rgb(238, 209, 209);
+    }
+
+    h2 {
+        margin-top: 21px;
+        font-family: monospace;
+        color: rgb(255 234 85);
+    }
+
+    label {
+        font-family: monospace;
+        font-weight: bold;
+        color: rgb(238, 209, 209);
+    }
+
+    button {
+        border: 1px solid;
+        font-weight: bold;
+        border-radius: 17px;
+        padding: 6px 17px;
+        background-color: #822abf1f;
+        color: #efe3e3d6;
+    }
