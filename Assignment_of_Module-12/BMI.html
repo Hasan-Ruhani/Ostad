@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+        <title>BMI-Ecoyva</title>
+
+
+    </head>
+    <body>
+        <div class="from_Container">
+            <h1>BMI Calculator</h1>
+            <form id="formId">
+                <label for="weightInput">Weight(kg)</label><br>
+                <input type="number" id="weight" placeholder="Your Weight" required> <br> <br>
+                <label for="heightInput">Height(meters)</label><br>
+                <input type="number" id="height" placeholder="Your Height" required> <br> <br>
+                <button id="calculateBtn" onclick="bmiFunction(event)">Calculate BMI</button>
+                <h2 id="result"></h2>
+            </form>
+        </div>
+                  
+        <iframe frameborder="0" scrolling="no" style="background-color: transparent; border: 0px; display: none;"></iframe>
+        
+        <script>
+            function bmiFunction(event){
+                event.preventDefault();
+                let weightinput = document.getElementById('weight').value;
+                let heightinput = document.getElementById('height').value;
+
+                let result = (weightinput / (heightinput * heightinput)). toFixed(2);
+
+                let calculate = document.getElementById('result');
+                calculate.innerHTML = "BMI: " + result;
+
+                document.getElementById('weight').value = '';
+                document.getElementById('height').value = '';
+            }
+        </script>
+    </body>
+</html>
