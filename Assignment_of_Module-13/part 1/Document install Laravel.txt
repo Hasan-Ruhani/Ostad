@@ -1,0 +1,12 @@
+ I took this step to install Laravel document 
+
+1. Open gitbash and run this command
+   "composer create-project laravel/laravel LaravelApp"
+
+2. When install complete "LaravelApp" then again run this command
+   "composer install" 
+
+3. Then go to correct path to "LaravelApp" and run this command
+   "php artisan serve"
+
+4. Now go to any brower and type http://localhost:8000 then press enter key.
