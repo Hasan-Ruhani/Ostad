@@ -41,4 +41,12 @@ class userController extends Controller
     function dashboard(){
         return view('welcome');
     }
+
+    function profile(){
+        return "This is Profiel Page";
+    }
+
+    function settings(){
+        return "This is Settings Page";
+    }
 }
