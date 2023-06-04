@@ -1,1 +1,0 @@
-<h1>Destroy your product here!!</h1>
