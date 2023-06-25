@@ -1,6 +1,7 @@
 <?php
 
-use App\Http\Controllers\QueryController;
+use App\Http\Controllers\categoryController;
+use App\Http\Controllers\postController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,5 +18,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/post/{id}/delete', [postController::class, 'getPost']);
+Route::get('/softDelete', [postController::class, 'getSoftDeleted']);
+Route::get('/latest', [postController::class, 'latestPost']);
 
-Route::get('/post', [QueryController::class, 'getPost']);
+Route::get('/category', [categoryController::class, 'getCategory']);
+Route::get('/categories/{id}/posts', [categoryController::class, 'seePost']);
+
