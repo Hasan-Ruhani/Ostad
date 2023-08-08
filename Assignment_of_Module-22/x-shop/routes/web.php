@@ -4,6 +4,7 @@ use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\IncomeController;
 use App\Http\Controllers\UserController;
 use App\Http\Middleware\TokenVerificationMiddleware;
 use Illuminate\Support\Facades\Route;
@@ -62,3 +63,18 @@ Route::get("/list-customer",[CustomerController::class,'CustomerList'])->middlew
 Route::post("/delete-customer",[CustomerController::class,'CustomerDelete'])->middleware([TokenVerificationMiddleware::class]);
 Route::post("/update-customer",[CustomerController::class,'CustomerUpdate'])->middleware([TokenVerificationMiddleware::class]);
 Route::post("/customer-by-id",[CustomerController::class,'CustomerByID'])->middleware([TokenVerificationMiddleware::class]);
+
+
+// Customer Income
+Route::post('/create-income', [IncomeController::class, 'create'])->middleware([TokenVerificationMiddleware::class]);
+Route::get("/list-income",[CustomerController::class,'incomeList'])->middleware([TokenVerificationMiddleware::class]);
+Route::post("/delete-income",[CustomerController::class,'incomeDelete'])->middleware([TokenVerificationMiddleware::class]);
+Route::post("/update-income",[CustomerController::class,'incomeUpdate'])->middleware([TokenVerificationMiddleware::class]);
+Route::post("/income-by-id",[CustomerController::class,'incomeByID'])->middleware([TokenVerificationMiddleware::class]);
+
+// Customer Expense
+Route::post('/create-expense', [IncomeController::class, 'create'])->middleware([TokenVerificationMiddleware::class]);
+Route::get("/list-expense",[CustomerController::class,'expenseList'])->middleware([TokenVerificationMiddleware::class]);
+Route::post("/delete-expense",[CustomerController::class,'expenseDelete'])->middleware([TokenVerificationMiddleware::class]);
+Route::post("/update-expense",[CustomerController::class,'expenseUpdate'])->middleware([TokenVerificationMiddleware::class]);
+Route::post("/expense-by-id",[CustomerController::class,'expenseByID'])->middleware([TokenVerificationMiddleware::class]);
