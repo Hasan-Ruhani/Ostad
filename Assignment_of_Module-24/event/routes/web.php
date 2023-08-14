@@ -78,3 +78,6 @@ Route::get("/list-expense",[EventController::class,'expenseList'])->middleware([
 Route::post("/delete-expense",[EventController::class,'expenseDelete'])->middleware([TokenVerificationMiddleware::class]);
 Route::post("/update-expense",[EventController::class,'expenseUpdate'])->middleware([TokenVerificationMiddleware::class]);
 Route::post("/expense-by-id",[EventController::class,'expenseByID'])->middleware([TokenVerificationMiddleware::class]);
+
+
+
