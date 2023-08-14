@@ -1,8 +1,6 @@
 <?php
 
-use App\Http\Controllers\CustomerController;
-use App\Http\Controllers\CategoryController;
-use App\Http\Controllers\ProductController;
+use App\Http\Controllers\EventController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\IncomeController;
 use App\Http\Controllers\UserController;
@@ -43,6 +41,8 @@ Route::post("/user-update",[UserController::class,'UserUpdate'])->middleware([To
 // Logout
 Route::get('/logout',[UserController::class,'UserLogout']);
 
+Route::resource('events', EventController::class)->middleware([TokenVerificationMiddleware::class]);
+
 // Page Routes
 Route::get('/userLogin',[UserController::class,'LoginPage']);
 Route::get('/userRegistration',[UserController::class,'RegistrationPage']);
@@ -50,7 +50,7 @@ Route::get('/sendOtp',[UserController::class,'SendOtpPage']);
 Route::get('/verifyOtp',[UserController::class,'VerifyOTPPage']);
 Route::get('/resetPassword',[UserController::class,'ResetPasswordPage'])->middleware([TokenVerificationMiddleware::class]);
 Route::get('/userProfile',[UserController::class,'ProfilePage'])->middleware([TokenVerificationMiddleware::class]);
-Route::get('/customerPage',[CustomerController::class,'CustomerPage'])->middleware([TokenVerificationMiddleware::class]);
+Route::get('/eventPage',[EventController::class,'CustomerPage'])->middleware([TokenVerificationMiddleware::class]);
 
 
 // After Authentication
@@ -58,23 +58,23 @@ Route::get('/dashboard',[DashboardController::class,'DashboardPage'])->middlewar
 
 
 // Customer Route
-Route::post("/create-customer",[CustomerController::class,'CustomerCreate'])->middleware([TokenVerificationMiddleware::class]);
-Route::get("/list-customer",[CustomerController::class,'CustomerList'])->middleware([TokenVerificationMiddleware::class]);
-Route::post("/delete-customer",[CustomerController::class,'CustomerDelete'])->middleware([TokenVerificationMiddleware::class]);
-Route::post("/update-customer",[CustomerController::class,'CustomerUpdate'])->middleware([TokenVerificationMiddleware::class]);
-Route::post("/customer-by-id",[CustomerController::class,'CustomerByID'])->middleware([TokenVerificationMiddleware::class]);
+Route::post("/create-event",[EventController::class,'EventCreate'])->middleware([TokenVerificationMiddleware::class]);
+Route::get("/list-event",[EventController::class,'EventList'])->middleware([TokenVerificationMiddleware::class]);
+Route::post("/delete-event",[EventController::class,'EventDelete'])->middleware([TokenVerificationMiddleware::class]);
+Route::post("/update-event",[EventController::class,'EventUpdate'])->middleware([TokenVerificationMiddleware::class]);
+Route::post("/event-by-id",[EventController::class,'EventByID'])->middleware([TokenVerificationMiddleware::class]);
 
 
 // Customer Income
 Route::post('/create-income', [IncomeController::class, 'create'])->middleware([TokenVerificationMiddleware::class]);
-Route::get("/list-income",[CustomerController::class,'incomeList'])->middleware([TokenVerificationMiddleware::class]);
-Route::post("/delete-income",[CustomerController::class,'incomeDelete'])->middleware([TokenVerificationMiddleware::class]);
-Route::post("/update-income",[CustomerController::class,'incomeUpdate'])->middleware([TokenVerificationMiddleware::class]);
-Route::post("/income-by-id",[CustomerController::class,'incomeByID'])->middleware([TokenVerificationMiddleware::class]);
+Route::get("/list-income",[EventController::class,'incomeList'])->middleware([TokenVerificationMiddleware::class]);
+Route::post("/delete-income",[EventController::class,'incomeDelete'])->middleware([TokenVerificationMiddleware::class]);
+Route::post("/update-income",[EventController::class,'incomeUpdate'])->middleware([TokenVerificationMiddleware::class]);
+Route::post("/income-by-id",[EventController::class,'incomeByID'])->middleware([TokenVerificationMiddleware::class]);
 
 // Customer Expense
 Route::post('/create-expense', [IncomeController::class, 'create'])->middleware([TokenVerificationMiddleware::class]);
-Route::get("/list-expense",[CustomerController::class,'expenseList'])->middleware([TokenVerificationMiddleware::class]);
-Route::post("/delete-expense",[CustomerController::class,'expenseDelete'])->middleware([TokenVerificationMiddleware::class]);
-Route::post("/update-expense",[CustomerController::class,'expenseUpdate'])->middleware([TokenVerificationMiddleware::class]);
-Route::post("/expense-by-id",[CustomerController::class,'expenseByID'])->middleware([TokenVerificationMiddleware::class]);
+Route::get("/list-expense",[EventController::class,'expenseList'])->middleware([TokenVerificationMiddleware::class]);
+Route::post("/delete-expense",[EventController::class,'expenseDelete'])->middleware([TokenVerificationMiddleware::class]);
+Route::post("/update-expense",[EventController::class,'expenseUpdate'])->middleware([TokenVerificationMiddleware::class]);
+Route::post("/expense-by-id",[EventController::class,'expenseByID'])->middleware([TokenVerificationMiddleware::class]);

@@ -3,18 +3,18 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Customer;
+use App\Models\Event;
 
-class CustomerController extends Controller
+class EventController extends Controller
 {
 
-    function CustomerPage(){
+    function EventPage(){
         return view('pages.dashboard.customer-page');
     }
 
-    function CustomerCreate(Request $request){
+    function EventCreate(Request $request){
         $user_id = $request->header('id');
-        return Customer::create([
+        return Event::create([
             'name' => $request->input('name'),
             'email' => $request->input('email'),
             'address' => $request->input('address'),
@@ -23,21 +23,21 @@ class CustomerController extends Controller
         ]);
     }
 
-    function CustomerList(Request $request){
+    function EventList(Request $request){
         $user_id = $request->header('id');
-        return Customer::where('user_id', $user_id)->get();
+        return Event::where('user_id', $user_id)->get();
     }
 
-    function CustomerDelete(Request $request){
+    function EventDelete(Request $request){
         $customer_id = $request->input('id');
         $user_id = $request->header('id');
-        return Customer::where('id', $customer_id) -> where('user_id', $user_id)->delete();
+        return Event::where('id', $customer_id) -> where('user_id', $user_id)->delete();
     }
 
-    function CustomerUpdate(Request $request){
+    function EventUpdate(Request $request){
         $customer_id = $request->input('id');
         $user_id = $request->header('id');
-        return Customer::where('id', $customer_id) -> where('user_id', $user_id)->update([
+        return Event::where('id', $customer_id) -> where('user_id', $user_id)->update([
             'name' => $request -> input('name'),
             'email' => $request -> input('email'),
             'address' => $request -> input('address'),
